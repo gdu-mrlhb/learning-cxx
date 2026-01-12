@@ -4,23 +4,35 @@
 // `class` 默认访问控制符是 `private`，
 // `struct` 默认访问控制符是 `public`。
 // READ: 访问说明符 <https://zh.cppreference.com/w/cpp/language/access>
-
+const int  cLen   =   16;
 // 这个 class 中的字段被 private 修饰，只能在 class 内部访问。
 // 因此必须提供构造器来初始化字段。
 // READ: 构造器 <https://zh.cppreference.com/w/cpp/language/constructor>
 class Fibonacci {
-    size_t cache[16];
+    size_t cache[cLen];
     int cached;
 
 public:
     // TODO: 实现构造器
-    // Fibonacci()
+    Fibonacci() : cache{0,1},cached(1)
+    {
+
+    }
 
     // TODO: 实现正确的缓存优化斐波那契计算
     size_t get(int i) {
-        for (; false; ++cached) {
-            cache[cached] = cache[cached - 1] + cache[cached - 2];
+        // for (; false; ++cached) {
+        //     cache[cached] = cache[cached - 1] + cache[cached - 2];
+        // }
+        // return cache[i];
+
+        if(i>=0 && i<=cached)     return  cache[i];
+        int loccached  =   cached+1;
+        for (; loccached <cLen && loccached <=i; ++loccached) {
+            cache[loccached] = cache[loccached - 1] + cache[loccached - 2];
+            cached    =   loccached;
         }
+        if(i<0) return 0;
         return cache[i];
     }
 };
