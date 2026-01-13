@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
         std::array<char, 21> arr{"Hello, InfiniTensor!"};
         ASSERT(arr.size() == 21, "Fill in the correct value.");
         ASSERT(sizeof(arr) == 21, "Fill in the correct value.");
-        ASSERT(std::strcmp(arr.data(), "Hello, InfiniTensor!") == 0, "Fill in the correct value.");
+        ASSERT(std::strcmp(arr.data(), "Hello, InfiniTensor!")   ==  0, "Fill in the correct value.");
     }
     return 0;
 }
