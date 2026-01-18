@@ -12,6 +12,7 @@ bool key_exists(std::map<k, v> const &map, k const &key) {
 template<class k, class v>
 void set(std::map<k, v> &map, k key, v value) {
     // TODO: 实现函数
+    map.push
 }
 
 // ---- 不要修改以下代码 ----
